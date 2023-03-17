@@ -38,11 +38,11 @@ public class SkillController {
                                          Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Skill");
             return "skills/add";
-        } else {
-            skillRepository.save(newSkill);
         }
 
+        skillRepository.save(newSkill);
         return "redirect:";
     }
 

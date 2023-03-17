@@ -37,11 +37,11 @@ public class EmployerController {
                                     Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Employer");
             return "employers/add";
-        } else {
-            employerRepository.save(newEmployer);
         }
 
+        employerRepository.save(newEmployer);
         return "redirect:";
     }
 
@@ -50,7 +50,6 @@ public class EmployerController {
 
         Optional<Employer> optEmployer = employerRepository.findById(employerId);
 
-//        Optional optEmployer = null;
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();
             model.addAttribute("employer", employer);
@@ -60,3 +59,5 @@ public class EmployerController {
         }
     }
 }
+
+//        Optional optEmployer = null;
