@@ -522,7 +522,7 @@ public class TestTaskTwo extends AbstractTest {
     }
 
     /*
-     * Verifies that displayViewSkill calls findById to retrieve an skill object
+     * Verifies that displayViewSkill calls findById to retrieve a skill object
      * */
     @Test
     public void testDisplayViewSkillCallsFindById (@Mocked SkillRepository skillRepository) throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException, IllegalAccessException, InvocationTargetException {
