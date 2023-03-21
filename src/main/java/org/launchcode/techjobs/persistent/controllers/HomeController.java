@@ -35,7 +35,7 @@ public class HomeController {
     public String index(Model model) {
 
         model.addAttribute("title", "My Jobs");
-
+        model.addAttribute("jobs", jobRepository.findAll()); //added, not sure
         return "index";
     }
 
@@ -63,6 +63,8 @@ public class HomeController {
 //        List<Skill> skillsList = (List<Skill>) skillRepository.findAllById(skills);
 //        newJob.setSkills(skillsList);
 
+
+        jobRepository.save(newJob);
         return "redirect:";
     }
 
